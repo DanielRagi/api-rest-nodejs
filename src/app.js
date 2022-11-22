@@ -1,10 +1,13 @@
 import express from 'express'
 import morgan from 'morgan'
 import pkg from '../package.json'
+import { createRoles } from './libs/setup'
 
 import studentsRoutes from './routes/students.routes'
+import authRoutes from './routes/auth.routes'
 
 const app = express()
+createRoles();
 
 app.set('pkg', pkg);
 
@@ -21,5 +24,6 @@ app.get('/', (req, res) => {
 })
 
 app.use('/students', studentsRoutes)
+app.use('/auth', authRoutes)
 
 export default app;
