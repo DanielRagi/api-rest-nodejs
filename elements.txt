@@ -1,0 +1,18 @@
+Dependencias usadas:
+* express: Entorno para despliegue del servidor de la API.
+* bcryptjs: Encriptación de datos (contraseñas) para su manejo seguro.
+* cors: Permite compartir recursos entre dominios restringidos.
+* dotenv: Creación de variables de entorno.
+* jsonwebtoken: Implementación de JWT.
+* mongoose: Integración con MongoDB.
+* morgan: Vigilar las peticiones que llegan al servidor.
+* helmet: Asegurar características de Express para evitar intrusiones.
+
+Dependencias de desarrollo:
+* babel (core, cli, node, preset-env): Usar últimas características de JS en Node.
+* nodemon: Reinicio automático de servidor al encontrar cambios.
+
+Scripts:
+* 'npm run build' : Compilar en código Node soportado en ./build
+* 'npm run dev' : Iniciar servidor de desarrollo.
+* 'npm start' : Iniciar servidor de producción.
