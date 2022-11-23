@@ -9,12 +9,12 @@ export const verifyToken = async (req, res, next) => {
 
     console.log(token);
 
-    if (!token) return res.status(403).json({ message: "Sesión incorrecta (token)" });
+    if (!token) return res.json({ message: "Sesión incorrecta (token)" });
     const decoded = jwt.verify(token, config.SECRET);
     req.userId = decoded.id;
 
     const user = await User.findById(req.userId, { password: 0 });
-    if (!user) return res.status(404).json({ message: "Usuario no encontrado (token)" });
+    if (!user) return res.json({ message: "Usuario no encontrado (token)" });
 
     next();
   } catch (error) {
@@ -32,7 +32,7 @@ export const isProfesor = async (req, res, next) => {
             return;
         }
     }
-    return res.status(403).json({message: "Permisos insuficientes"})
+    return res.json({message: "Permisos insuficientes"})
 };
 
 export const isAdmin = async (req, res, next) => {
@@ -45,5 +45,5 @@ export const isAdmin = async (req, res, next) => {
             return;
         }
     }
-    return res.status(403).json({message: "Permisos insuficientes"})
+    return res.json({message: "Permisos insuficientes"})
 };
