@@ -7,12 +7,12 @@ export const verifyToken = async (req, res, next) => {
   try {
     const token = req.headers["x-access-token"];
 
-    console.log(token);
+    //console.log(token);
 
     if (!token) return res.json({ message: "Sesión incorrecta (token)" });
+    
     const decoded = jwt.verify(token, config.SECRET);
     req.userId = decoded.id;
-
     const user = await User.findById(req.userId, { password: 0 });
     if (!user) return res.json({ message: "Usuario no encontrado (token)" });
 
