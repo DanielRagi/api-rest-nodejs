@@ -10,10 +10,16 @@
 			"name": "Students",
 			"item": [
 				{
-					"name": "students",
+					"name": "/students",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2Q1YzZmNWUzZDMyYTNhODBmOTIwYyIsImlhdCI6MTY2OTQzNDQzMiwiZXhwIjoxNjY5NDM4MDMyfQ.jEWC04MrnKbhbtVilyuF3zv-1O8IsONwl8t1CrjRmEY",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3000/students",
 							"protocol": "http",
@@ -29,7 +35,7 @@
 					"response": []
 				},
 				{
-					"name": "students",
+					"name": "/students",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -37,11 +43,16 @@
 								"key": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2Q1YzZmNWUzZDMyYTNhODBmOTIwYyIsImlhdCI6MTY2OTc1MjA3OSwiZXhwIjoxNjY5NzU1Njc5fQ.WhixYVqpZEYtelS6BM6m6JcAWcxjVjyuriltEIjfJao",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"\",\r\n    \"nombre\": \"\",\r\n    \"apellido\": \"\",\r\n    \"programa\": \"\",\r\n    \"ingreso\": \"\",\r\n    \"urlFotoPerfil\": \"\"\r\n}"
+							"raw": "{\r\n    \"id\": \"987654321\",\r\n    \"nombre\": \"\",\r\n    \"apellido\": \"\",\r\n    \"programa\": \"\",\r\n    \"ingreso\": \"\",\r\n    \"urlFotoPerfil\": \"\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/students",
@@ -56,16 +67,200 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "/students/studentId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/students/1122334455",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"1122334455"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/students/studentId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2Q1YzZmNWUzZDMyYTNhODBmOTIwYyIsImlhdCI6MTY2OTc1MjA3OSwiZXhwIjoxNjY5NzU1Njc5fQ.WhixYVqpZEYtelS6BM6m6JcAWcxjVjyuriltEIjfJao",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Manuel\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/students/2233445566",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"2233445566"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/students/studentId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2Q1YzZmNWUzZDMyYTNhODBmOTIwYyIsImlhdCI6MTY2OTc1ODgzMywiZXhwIjoxNjY5NzYyNDMzfQ.Rs7w6_pzo58AWX0I4XWila7uMPolxq1vQptceh55y9E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/students/987654321",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"987654321"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Users",
-			"item": []
+			"item": [
+				{
+					"name": "/users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzN2NmNTExNjczNjlmYmNmOGVhNzU3OSIsImlhdCI6MTY2OTE2MDAwOCwiZXhwIjoxNjY5MTYzNjA4fQ.SuGa6YLzBwseDp8FUZc1DN-drbzqdPYFV4zMK6TdCi8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"adminpassword\",\r\n    \"roles\": [\"profesor\", \"admin\"]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Auth",
-			"item": []
+			"item": [
+				{
+					"name": "/auth/signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"adminpassword\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
